@@ -6,7 +6,7 @@ from scipy.stats import norm
 batch_size = 16
 n = 15
 digit_size = 28
-figure = np.zeros((digit_size, digit_size, n))
+figure = np.zeros((digit_size * n, digit_size * n))
 grid_x = norm.ppf(np.linspace(0.05, 0.95, n))
 grid_y = norm.ppf(np.linspace(0.05, 0.95, n))
 
@@ -23,4 +23,4 @@ for i, yi in enumerate(grid_y):
 plt.figure(figsize=(10, 10))
 plt.imshow(figure, cmap='Greys_r')
 plt.show()
-plt.imsave(figure, cmap = 'Greys_r')
+plt.imsave('mnist.jpg', figure, cmap='Greys_r')
